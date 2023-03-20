@@ -60,6 +60,25 @@ public class AreaOfARectangle
             System.out.println(input);
         }
         
+       /* switch(choices)
+        {
+            case 0:
+            getLength();
+            getWidth();
+            displayArea();
+            break;
+            
+            case 1:
+            = circumference
+
+            case  2:
+            = Diameter
+
+            case 3:
+            = Radius
+        }
+        */
+
         public static void getLength()
         {
          input = JOptionPane.showInputDialog("Enter Length");
