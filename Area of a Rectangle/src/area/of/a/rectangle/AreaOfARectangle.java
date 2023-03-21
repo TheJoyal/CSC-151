@@ -4,6 +4,7 @@
 // 1/23/2023
 
 package area.of.a.rectangle;
+import javax.swing.DefaultBoundedRangeModel;
 import javax.swing.JOptionPane;
 
 public class AreaOfARectangle
@@ -24,7 +25,8 @@ public class AreaOfARectangle
         //double width;
         //double area;
           getName();
-          getShape();
+          getType();
+          getShape1();
           getFormula();
           getLength();
           getWidth();
@@ -36,9 +38,39 @@ public class AreaOfARectangle
          name = JOptionPane.showInputDialog("Hello! What is your name?");
         }
 
-        public static void getShape()
+        public static void getType()
         {
-            String[] choices = { "Circle", "Square", "Rectangle"};
+            String[] choices = { "2D", "3D"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your type of shape",
+                "Choose your type of shape", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+        }
+        
+        switch(Type)
+        case 0:
+        {
+          getShape1();
+          break;
+        }
+        case 1:
+        {
+          getShape2();
+          break;
+        }
+        Default:
+        {
+            getType();
+            break;
+        }
+
+
+        public static void getShape1()
+        {
+            String[] choices = { "Circle", "Square", "Rectangle", "Parallelogram", "Trapezoid"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your shape",
                 "Choose your shape", JOptionPane.QUESTION_MESSAGE, null, // Use
                                                                                      // default
@@ -47,6 +79,24 @@ public class AreaOfARectangle
                 choices[0]); // Initial choice
             System.out.println(input);
         }
+
+        // add switch here for shape1 choices
+
+        public static void getShape2()
+        {
+            String[] choices = { "Rectangular Solid", "Cube", "Right Circular Cylinder", "Sphere", "Right Circular Cone", "Pyramid", "Right Circular Cone Frustun"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your shape",
+                "Choose your shape", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);  
+        }
+
+        
+        // add switch here for shape2 choces
+
 
         public static void getFormula()
         {
