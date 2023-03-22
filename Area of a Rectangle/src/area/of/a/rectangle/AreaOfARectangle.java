@@ -50,22 +50,18 @@ public class AreaOfARectangle
             System.out.println(input);
         }
         
-        switch(getType)
+        switch(choices)
         {
-        case 0:
-        
+        case "2D":
           getShape1();
           break;
         
-        case 1:
-        
+        case "3D":
           getShape2();
           break;
         
-        Default:
-        
-            getType();
-            break;
+        Default:        
+            getShape1();
         }
 
 
