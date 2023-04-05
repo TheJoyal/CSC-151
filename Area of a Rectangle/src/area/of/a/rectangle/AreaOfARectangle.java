@@ -50,7 +50,7 @@ public class AreaOfARectangle
             System.out.println(input);
         }
         
-        switch(choices)
+        switch(choices[])
         {
         case "2D":
           getShape1();
@@ -144,7 +144,7 @@ public class AreaOfARectangle
          area = length * width;
         
          JOptionPane.showMessageDialog(null,
-                                      "Hello " + name + "! The area of your rectangle is " + area);
+                                      "Hello " + name + "! The " + TODO: insert the shape choice here + "of your " + shape + "is " + formula);
         }
 // TODO code application logic here
     
