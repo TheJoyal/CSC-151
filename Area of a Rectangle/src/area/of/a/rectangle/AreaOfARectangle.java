@@ -50,7 +50,7 @@ public class AreaOfARectangle
             System.out.println(input);
         }
         
-        switch(choices[])
+        switch(choices)
         {
         case "2D":
           getShape1();
