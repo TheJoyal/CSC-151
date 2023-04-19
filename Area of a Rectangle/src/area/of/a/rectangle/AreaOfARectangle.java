@@ -15,6 +15,10 @@ public class AreaOfARectangle
         public static double length;
         public static double width;
         public static double area;
+        public static double circumference;
+        public static double diameter;
+        public static double radius;
+        
     
         public static String type;
         public static String Shape1;
@@ -215,9 +219,12 @@ public class AreaOfARectangle
         public static void displayArea()
         {
          area = length * width;
-        
+        }
+         
+       // TODO: If statement to dictate which shape name is displayed when the answer is given
+        {
          JOptionPane.showMessageDialog(null,
-                                      "Hello " + name + "! The " + formula + "of your " + shape + "is " + answer);
+                                      "Hello " + name + "! The " + formula + "of your " + Shape1 + "is " + answer);
         }
 // TODO code application logic here
     
