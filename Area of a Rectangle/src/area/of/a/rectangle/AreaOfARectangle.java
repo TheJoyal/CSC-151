@@ -16,6 +16,11 @@ public class AreaOfARectangle
         public static double width;
         public static double area;
     
+        public static String type;
+        public static String Shape1;
+        public static String Shape2;
+        public static String formula;
+        public static double answer;
     public static void main(String[] args)
 
     {
@@ -48,9 +53,10 @@ public class AreaOfARectangle
                 choices, // Array of choices
                 choices[0]); // Initial choice
             System.out.println(input);
-        }
+            type = input;
         
-        switch(choices)
+        
+        switch(type)
         {
         case "2D":
           getShape1();
@@ -62,6 +68,7 @@ public class AreaOfARectangle
         
         Default:        
             getShape1();
+        }
         }
 
 
@@ -75,6 +82,34 @@ public class AreaOfARectangle
                 choices, // Array of choices
                 choices[0]); // Initial choice
             System.out.println(input);
+            Shape1 = input;
+            
+            switch(Shape1)
+            {
+                case "Circle":
+                    getFormula();
+                    break;
+                    
+                case "Square":
+                    getFormula();
+                    break;
+                            
+                case "Rectangle":
+                    getFormula();
+                    break;
+                    
+                case "Parallelogram":
+                    getFormula();
+                    break;
+                    
+                case "Trapezoid":
+                    getFormula();
+                    break;
+                    
+                default:
+                    getFormula();
+            }
+        
         }
 
         // add switch here for shape1 choices
@@ -89,6 +124,41 @@ public class AreaOfARectangle
                 choices, // Array of choices
                 choices[0]); // Initial choice
             System.out.println(input);  
+            Shape2 = input;
+            
+            switch (Shape2)
+            {
+                case "Rectangular Solid":
+                        getFormula();
+                break;
+                
+                case "Cube":
+                        getFormula();
+                break;
+                
+                case "Right Circular Cylinder":
+                        getFormula();
+                break;
+                
+                case "Sphere":
+                        getFormula();
+                break;
+                
+                case "Right Circular Cone":
+                        getFormula();
+                break;
+                
+                case "Pyramid":
+                        getFormula();   
+                break;
+                
+                case "Right Circular Cone Frustun":
+                        getFormula();
+                break;
+                
+                default: 
+                        getFormula();
+            }
         }
 
         
@@ -105,26 +175,29 @@ public class AreaOfARectangle
                 choices, // Array of choices
                 choices[0]); // Initial choice
             System.out.println(input);
-        }
-        
-       /* switch(choices)
+            formula = input;
+            
+            switch(formula)
         {
-            case 0:
+            case "Area":
             getLength();
             getWidth();
             displayArea();
             break;
             
-            case 1:
-            = circumference
+            case "Circumference":
+            
+                break;
 
-            case  2:
-            = Diameter
+            case  "Diameter":
+            
+                break;
 
-            case 3:
-            = Radius
+            case "Radius":
+            
+                break;
         }
-        */
+        }
 
         public static void getLength()
         {
@@ -144,7 +217,7 @@ public class AreaOfARectangle
          area = length * width;
         
          JOptionPane.showMessageDialog(null,
-                                      "Hello " + name + "! The " + TODO: insert the shape choice here + "of your " + shape + "is " + formula);
+                                      "Hello " + name + "! The " + formula + "of your " + shape + "is " + answer);
         }
 // TODO code application logic here
     
