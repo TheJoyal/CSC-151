@@ -39,6 +39,7 @@ public class AreaOfARectangle
           getFormula();
           getLength();
           getWidth();
+          getRadius();
           displayArea();
     }
         
@@ -190,15 +191,15 @@ public class AreaOfARectangle
             break;
             
             case "Circumference":
-            
+            // C=2*Pi*r
                 break;
 
             case  "Diameter":
-            
+            // D=2*r
                 break;
 
             case "Radius":
-            
+            // R= C/2*Pi
                 break;
         }
         }
@@ -214,6 +215,21 @@ public class AreaOfARectangle
          input = JOptionPane.showInputDialog("Enter Width");
         
          width = Integer.parseInt(input);
+        }
+        
+        public static void getCircumference()
+        {
+            circumference = 2 * 3.14 * radius;
+        }
+        
+        public static void getDiameter()
+        {
+            diameter = 2 * radius;
+        }
+        
+        public static void getRadius()
+        {
+            radius = circumference / 2 * 3.14;
         }
         
         public static void displayArea()
