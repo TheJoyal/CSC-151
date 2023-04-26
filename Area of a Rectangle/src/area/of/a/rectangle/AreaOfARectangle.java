@@ -19,12 +19,15 @@ public class AreaOfARectangle
         public static double diameter;
         public static double radius;
         
+        
     
         public static String type;
         public static String Shape1;
         public static String Shape2;
         public static String formula;
         public static double answer;
+        
+        
     public static void main(String[] args)
 
     {
@@ -41,6 +44,10 @@ public class AreaOfARectangle
           getWidth();
           getRadius();
           displayArea();
+          getCircumference();
+          getDiameter();
+          getRadius();
+          displayCircumference();
     }
         
         public static void getName()
@@ -73,8 +80,8 @@ public class AreaOfARectangle
         
         Default:        
             getShape1();
-        }
-        }
+        }//end switch
+        }//end getType()
 
 
         public static void getShape1()
@@ -113,9 +120,9 @@ public class AreaOfARectangle
                     
                 default:
                     getFormula();
-            }
+            }//end switch
         
-        }
+        }//end getShape1
 
         // add switch here for shape1 choices
 
@@ -163,8 +170,8 @@ public class AreaOfARectangle
                 
                 default: 
                         getFormula();
-            }
-        }
+            }//end switch
+        }//end getShape2
 
         
         // add switch here for shape2 choces
@@ -191,18 +198,22 @@ public class AreaOfARectangle
             break;
             
             case "Circumference":
-            // C=2*Pi*r
+            getCircumference();
                 break;
 
             case  "Diameter":
-            // D=2*r
+            getDiameter();
                 break;
 
             case "Radius":
-            // R= C/2*Pi
+            getRadius();
                 break;
-        }
-        }
+        
+            default:
+                getDiameter();
+            
+            }//end switch
+        }//end getFormula()
 
         public static void getLength()
         {
@@ -219,7 +230,11 @@ public class AreaOfARectangle
         
         public static void getCircumference()
         {
-            circumference = 2 * 3.14 * radius;
+           int radius1;
+            input = JOptionPane.showInputDialog("Enter Radius");
+            radius1 = Integer.parseInt(input);
+            circumference = 2 * 3.14 * radius1;
+            
         }
         
         public static void getDiameter()
@@ -238,6 +253,11 @@ public class AreaOfARectangle
         }
          
        // TODO: If statement to dictate which shape name is displayed when the answer is given
+        public static void displayCircumference()
+        {
+            JOptionPane.showMessageDialog(null,
+                    "Hello " + name + "The Circumference of your circle is " + circumference);
+        }
         {
          JOptionPane.showMessageDialog(null,
                                       "Hello " + name + "! The " + formula + "of your " + Shape1 + "is " + answer);
