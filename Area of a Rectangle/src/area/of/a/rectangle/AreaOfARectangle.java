@@ -199,6 +199,7 @@ public class AreaOfARectangle
             
             case "Circumference":
             getCircumference();
+            displayCircumference();
                 break;
 
             case  "Diameter":
