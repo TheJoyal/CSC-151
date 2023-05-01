@@ -235,16 +235,22 @@ public class AreaOfARectangle
             input = JOptionPane.showInputDialog("Enter Radius");
             radius1 = Integer.parseInt(input);
             circumference = 2 * 3.14 * radius1;
-            
+            displayCircumference();
         }
         
         public static void getDiameter()
         {
-            diameter = 2 * radius;
+            int radius2;
+            input = JOptionPane.showInputDialog("Enter Radius");
+            radius2 = Integer.parseInt(input);
+            diameter = 2 * radius2;
         }
         
         public static void getRadius()
         {
+            int circumference1;
+            input = JOptionPane.showInputDialog("Enter Circumference");
+            circumference1 = Integer.parseInt(input);
             radius = circumference / 2 * 3.14;
         }
         
