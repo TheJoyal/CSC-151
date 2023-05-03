@@ -14,17 +14,19 @@ public class AreaOfARectangle
         public static String shape;
         public static double length;
         public static double width;
+        public static double height;
         public static double area;
         public static double circumference;
         public static double diameter;
         public static double radius;
         public static double volume;
+        public static double surfaceArea;
         
         
     
         public static String type;
-        public static String Shape1;
-        public static String Shape2;
+        public static String Shape2D;
+        public static String Shape3D;
         public static String formula;
         public static double answer;
         
@@ -39,16 +41,19 @@ public class AreaOfARectangle
         //double area;
           getName();
           getType();
-          getShape1();
+          getShape2D();
+          getShape3D();
           getFormula();
           getLength();
           getWidth();
+          getHeight();
           getRadius();
           displayArea();
           getCircumference();
           getDiameter();
           getRadius();
           getVolume();
+          getSurfaceArea();
           displayCircumference();
     }
         
@@ -86,7 +91,7 @@ public class AreaOfARectangle
         }//end getType()
 
 
-        public static void getShape1()
+        public static void getShape2D()
         {
             String[] choices = { "Circle", "Square", "Rectangle", "Parallelogram", "Trapezoid"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your shape",
@@ -96,9 +101,9 @@ public class AreaOfARectangle
                 choices, // Array of choices
                 choices[0]); // Initial choice
             System.out.println(input);
-            Shape1 = input;
+            Shape2D = input;
             
-            switch(Shape1)
+            switch(Shape2D)
             {
                 case "Circle":
                     getFormula();
@@ -128,7 +133,7 @@ public class AreaOfARectangle
 
         // add switch here for shape1 choices
 
-        public static void getShape2()
+        public static void getShape3D()
         {
             String[] choices = { "Rectangular Solid", "Cube", "Right Circular Cylinder", "Sphere", "Right Circular Cone", "Pyramid", "Right Circular Cone Frustun"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your shape",
@@ -138,9 +143,9 @@ public class AreaOfARectangle
                 choices, // Array of choices
                 choices[0]); // Initial choice
             System.out.println(input);  
-            Shape2 = input;
+            Shape3D = input;
             
-            switch (Shape2)
+            switch (Shape3D)
             {
                 case "Rectangular Solid":
                         getFormula();
@@ -265,7 +270,80 @@ public class AreaOfARectangle
         
         public static void getVolume();
         {
+            if(formula == "Rectangular Solid")
+            {
+                volume = length * width * height; 
+            }//end if
             
+            if(formula == "Cube")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cylinder")
+            {
+                
+            }//end if
+            
+            if(formula == "Sphere")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cone")
+            {
+                
+            }//end if
+            
+            if(formula == "Rectangular Pyramid")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cone Frustum")
+            {
+                
+            }//end if
+            
+            public static void getSurfaceArea();
+        {
+            if(formula == "Rectangular Solid")
+            {
+                volume = length * width * height; 
+            }//end if
+            
+            if(formula == "Cube")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cylinder")
+            {
+                
+            }//end if
+            
+            if(formula == "Sphere")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cone")
+            {
+                
+            }//end if
+            
+            if(formula == "Rectangular Pyramid")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cone Frustum")
+            {
+                
+            }//end if
+            
+            JOptionPane.showMessageDialog(null,
+                "Hello " + name + " The Volume of your Rectangular Solid is "+ volume);
         }
         
         public static void displayArea()
