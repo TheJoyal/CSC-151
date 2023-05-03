@@ -18,6 +18,7 @@ public class AreaOfARectangle
         public static double circumference;
         public static double diameter;
         public static double radius;
+        public static double volume;
         
         
     
@@ -47,6 +48,7 @@ public class AreaOfARectangle
           getCircumference();
           getDiameter();
           getRadius();
+          getVolume();
           displayCircumference();
     }
         
@@ -179,7 +181,7 @@ public class AreaOfARectangle
 
         public static void getFormula()
         {
-            String[] choices = { "Area", "Circumference", "Diameter", "Radius"};
+            String[] choices = { "Area", "Circumference", "Diameter", "Radius", "Volume"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
                 "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
                                                                                      // default
@@ -195,6 +197,7 @@ public class AreaOfARectangle
             getLength();
             getWidth();
             displayArea();
+            getType();
             break;
             
             case "Circumference":
@@ -204,14 +207,20 @@ public class AreaOfARectangle
 
             case  "Diameter":
             getDiameter();
+            getType();
                 break;
 
             case "Radius":
             getRadius();
+            getType();
+                break;
+                
+            case "Volume":
+                getType();
                 break;
         
             default:
-                getDiameter();
+                getType();
             
             }//end switch
         }//end getFormula()
@@ -252,6 +261,11 @@ public class AreaOfARectangle
             input = JOptionPane.showInputDialog("Enter Circumference");
             circumference1 = Integer.parseInt(input);
             radius = circumference / 2 * 3.14;
+        }
+        
+        public static void getVolume();
+        {
+            
         }
         
         public static void displayArea()
