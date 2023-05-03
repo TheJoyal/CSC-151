@@ -200,7 +200,7 @@ public class AreaOfARectangle
             case "Circumference":
             getCircumference();
             displayCircumference();
-                break;
+            getType();
 
             case  "Diameter":
             getDiameter();
@@ -257,18 +257,22 @@ public class AreaOfARectangle
         public static void displayArea()
         {
          area = length * width;
+         JOptionPane.showMessageDialog(null,
+                 "Hello " + name + "The Area of your shape is "+ area);
         }
          
        // TODO: If statement to dictate which shape name is displayed when the answer is given
         public static void displayCircumference()
         {
             JOptionPane.showMessageDialog(null,
-                    "Hello " + name + "The Circumference of your circle is " + circumference);
+                    "Hello " + name + "The Circumference of your shape is " + circumference);
         }
+        /*
         {
          JOptionPane.showMessageDialog(null,
                                       "Hello " + name + "! The " + formula + "of your " + Shape1 + "is " + answer);
         }
+*/
 // TODO code application logic here
     
     
