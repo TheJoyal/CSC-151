@@ -3,6 +3,10 @@
 // Nick Joyal
 // 1/23/2023
 
+
+
+// TODO: Add the rest of the formulas for the 3d shapes and make them their own classes.
+
 package area.of.a.rectangle;
 import javax.swing.DefaultBoundedRangeModel;
 import javax.swing.JOptionPane;
