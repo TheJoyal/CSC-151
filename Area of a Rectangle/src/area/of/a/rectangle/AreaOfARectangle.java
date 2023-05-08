@@ -43,7 +43,8 @@ public class AreaOfARectangle
           getType();
           getShape2D();
           getShape3D();
-          getFormula();
+          //getFormula();
+          getFormulaC();
           getLength();
           getWidth();
           getHeight();
@@ -78,15 +79,15 @@ public class AreaOfARectangle
         switch(type)
         {
         case "2D":
-          getShape1();
+          getShape2D();
           break;
         
         case "3D":
-          getShape2();
+          getShape3D();
           break;
         
         Default:        
-            getShape1();
+            getShape2D();
         }//end switch
         }//end getType()
 
@@ -103,10 +104,12 @@ public class AreaOfARectangle
             System.out.println(input);
             Shape2D = input;
             
+            
+            
             switch(Shape2D)
             {
                 case "Circle":
-                    getFormula();
+                    getFormulaC();
                     break;
                     
                 case "Square":
@@ -184,7 +187,32 @@ public class AreaOfARectangle
         // add switch here for shape2 choces
 
 
-        public static void getFormula()
+        public static void getFormulaC()
+        {
+            String[] choices = { "Circumference", "Diameter", "Radius"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Circumference":
+                    getCircumference();
+                    getType();
+                    
+                case "Radius":
+                    getRadius();
+                    getType();
+            }
+        
+        
+        /*public static void getFormula()
         {
             String[] choices = { "Area", "Circumference", "Diameter", "Radius", "Volume"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
@@ -228,7 +256,7 @@ public class AreaOfARectangle
                 getType();
             
             }//end switch
-        }//end getFormula()
+        }//end getFormula() */
 
         public static void getLength()
         {
@@ -266,6 +294,7 @@ public class AreaOfARectangle
             input = JOptionPane.showInputDialog("Enter Circumference");
             circumference1 = Integer.parseInt(input);
             radius = circumference / 2 * 3.14;
+            displayRadius();
         }
         
         public static void getVolume();
@@ -351,6 +380,12 @@ public class AreaOfARectangle
          area = length * width;
          JOptionPane.showMessageDialog(null,
                  "Hello " + name + "The Area of your shape is "+ area);
+        }
+        
+        public static void displayRadius()
+        {
+            JOptionPane.showMessageDialog(null,
+                     "Hello " + name + "The Radius of your shape is " + radius);
         }
          
        // TODO: If statement to dictate which shape name is displayed when the answer is given
