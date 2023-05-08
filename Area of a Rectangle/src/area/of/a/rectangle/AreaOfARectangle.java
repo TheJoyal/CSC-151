@@ -49,6 +49,13 @@ public class AreaOfARectangle
           getFormulaR();
           getFormulaP();
           getFormulaT();
+          getFormulaRS();
+          getFormulaCU();
+          getFormulaRC();
+          getFormulaSP();
+          getFormulaRCC();
+          getFormulaPY();
+          getFormulaRCCF();
           getLength();
           getWidth();
           getHeight();
@@ -133,7 +140,7 @@ public class AreaOfARectangle
                     break;
                     
                 default:
-                    getFormula();
+                    getFormulaR();
             }//end switch
         
         }//end getShape1
@@ -155,35 +162,35 @@ public class AreaOfARectangle
             switch (Shape3D)
             {
                 case "Rectangular Solid":
-                        getFormula();
+                        getFormulaRS();
                 break;
                 
                 case "Cube":
-                        getFormula();
+                        getFormulaCU();
                 break;
                 
                 case "Right Circular Cylinder":
-                        getFormula();
+                        getFormulaRC();
                 break;
                 
                 case "Sphere":
-                        getFormula();
+                        getFormulaSP();
                 break;
                 
                 case "Right Circular Cone":
-                        getFormula();
+                        getFormulaRCC();
                 break;
                 
                 case "Pyramid":
-                        getFormula();   
+                        getFormulaPY();   
                 break;
                 
                 case "Right Circular Cone Frustun":
-                        getFormula();
+                        getFormulaRCCF();
                 break;
                 
                 default: 
-                        getFormula();
+                        getFormulaRS();
             }//end switch
         }//end getShape2
 
@@ -318,6 +325,32 @@ public class AreaOfARectangle
                     
             }
         }
+            
+            public static void getFormulaRS()
+        {
+            String[] choices = { "Volume"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Volume":
+                    getLength();
+                    getWidth();
+                    getHeight();
+                    volume = length * width * height;
+                JOptionPane.showMessageDialog(null,
+                "Hello " + name + " The Volume of your Rectangular Solid is "+ volume);
+                    getType();
+            }
+        }
         
         
         /*public static void getFormula()
@@ -366,7 +399,7 @@ public class AreaOfARectangle
             }//end switch
         }//end getFormula() */
         
-
+        
         public static void getLength()
         {
          input = JOptionPane.showInputDialog("Enter Length");
@@ -378,6 +411,13 @@ public class AreaOfARectangle
          input = JOptionPane.showInputDialog("Enter Width");
         
          width = Integer.parseInt(input);
+        }
+        
+        public static void getHeight()
+        {
+         input = JOptionPane.showInputDialog("Enter Height");
+        
+         height = Integer.parseInt(input);
         }
         
         public static void getCircumference()
@@ -406,83 +446,89 @@ public class AreaOfARectangle
             displayRadius();
         }
         
-        public static void getVolume();
+        public static void getVolume()
         {
             if(formula == "Rectangular Solid")
             {
-                volume = length * width * height; 
-            }//end if
-            
-            if(formula == "Cube")
-            {
-                
-            }//end if
-            
-            if(formula == "Right Circular Cylinder")
-            {
-                
-            }//end if
-            
-            if(formula == "Sphere")
-            {
-                
-            }//end if
-            
-            if(formula == "Right Circular Cone")
-            {
-                
-            }//end if
-            
-            if(formula == "Rectangular Pyramid")
-            {
-                
-            }//end if
-            
-            if(formula == "Right Circular Cone Frustum")
-            {
-                
-            }//end if
-            
-            public static void getSurfaceArea();
-        {
-            if(formula == "Rectangular Solid")
-            {
-                volume = length * width * height; 
-            }//end if
-            
-            if(formula == "Cube")
-            {
-                
-            }//end if
-            
-            if(formula == "Right Circular Cylinder")
-            {
-                
-            }//end if
-            
-            if(formula == "Sphere")
-            {
-                
-            }//end if
-            
-            if(formula == "Right Circular Cone")
-            {
-                
-            }//end if
-            
-            if(formula == "Rectangular Pyramid")
-            {
-                
-            }//end if
-            
-            if(formula == "Right Circular Cone Frustum")
-            {
-                
-            }//end if
-            
-            JOptionPane.showMessageDialog(null,
+                volume = length * width * height;
+                JOptionPane.showMessageDialog(null,
                 "Hello " + name + " The Volume of your Rectangular Solid is "+ volume);
+        
+                
+            }//end if
+            
+            if(formula == "Cube")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cylinder")
+            {
+                
+            }//end if
+            
+            if(formula == "Sphere")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cone")
+            {
+                
+            }//end if
+            
+            if(formula == "Rectangular Pyramid")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cone Frustum")
+            {
+                
+            }//end if
         }
+            
+            public static void getSurfaceArea()
+        {
+            if(formula == "Rectangular Solid")
+            {
+                volume = length * width * height; 
+            }//end if
+            
+            if(formula == "Cube")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cylinder")
+            {
+                
+            }//end if
+            
+            if(formula == "Sphere")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cone")
+            {
+                
+            }//end if
+            
+            if(formula == "Rectangular Pyramid")
+            {
+                
+            }//end if
+            
+            if(formula == "Right Circular Cone Frustum")
+            {
+                
+            }//end if
+        }
+            
+           // JOptionPane.showMessageDialog(null,
+             //   "Hello " + name + " The Volume of your Rectangular Solid is "+ volume);
+        //}
         
         public static void displayArea()
         {
