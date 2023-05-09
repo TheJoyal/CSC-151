@@ -54,12 +54,12 @@ public class AreaOfARectangle
           getFormulaP();
           getFormulaT();
           getFormulaRS();
-          getFormulaCU();
-          getFormulaRC();
-          getFormulaSP();
-          getFormulaRCC();
-          getFormulaPY();
-          getFormulaRCCF();
+         // getFormulaCU();
+         // getFormulaRC();
+         // getFormulaSP();
+         // getFormulaRCC();
+         // getFormulaPY();
+         // getFormulaRCCF();
           getLength();
           getWidth();
           getHeight();
@@ -101,7 +101,7 @@ public class AreaOfARectangle
           getShape3D();
           break;
         
-        Default:        
+        default:        
             getShape2D();
         }//end switch
         }//end getType()
@@ -563,4 +563,4 @@ public class AreaOfARectangle
     
     
  }
-}
+
