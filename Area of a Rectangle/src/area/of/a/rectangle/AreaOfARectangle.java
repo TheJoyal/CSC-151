@@ -53,23 +53,32 @@ public class AreaOfARectangle
           getFormulaR();
           getFormulaP();
           getFormulaT();
+          getFormulaTR();
           getFormulaRS();
-         // getFormulaCU();
-         // getFormulaRC();
-         // getFormulaSP();
-         // getFormulaRCC();
-         // getFormulaPY();
-         // getFormulaRCCF();
+          getFormulaCU();
+          getFormulaRC();
+          getFormulaSP();
+          getFormulaRCC();
+          getFormulaPY();
+          getFormulaRCCF();
           getLength();
           getWidth();
           getHeight();
           getRadius();
           displayArea();
+          displayAreaS();
+          displayAreaP();
+          displayAreaT();
+          displayAreaTR();
+          displayPerimeterS();
+          displayPerimeterR();
+          displayPerimeterT();
+          displayPerimeterTR();
           getCircumference();
           getDiameter();
           getRadius();
-          getVolume();
-          getSurfaceArea();
+          //getVolume();
+          //getSurfaceArea();
           displayCircumference();
     }
         
@@ -109,7 +118,7 @@ public class AreaOfARectangle
 
         public static void getShape2D()
         {
-            String[] choices = { "Circle", "Square", "Rectangle", "Parallelogram", "Trapezoid"};
+            String[] choices = { "Circle", "Square", "Rectangle", "Parallelogram", "Trapezoid", "Triangle"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your shape",
                 "Choose your shape", JOptionPane.QUESTION_MESSAGE, null, // Use
                                                                                      // default
@@ -142,6 +151,9 @@ public class AreaOfARectangle
                 case "Trapezoid":
                     getFormulaT();
                     break;
+                    
+                case "Triangle":
+                    getFormulaTR();
                     
                 default:
                     getFormulaR();
@@ -230,7 +242,7 @@ public class AreaOfARectangle
             
             public static void getFormulaS()
         {
-            String[] choices = { "Area"};
+            String[] choices = { "Area", "Perimeter"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
                 "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
                                                                                      // default
@@ -245,17 +257,22 @@ public class AreaOfARectangle
             {
                 case "Area":
                     getLength();
-                    getWidth();
-                    displayArea();
+                    displayAreaS();
                     getType();
                     break;
+                    
+                case "Perimeter":
+                    getLength();
+                    displayPerimeterS();
+                    getType();
+                    
                     
             }
         }
             
             public static void getFormulaR()
         {
-            String[] choices = { "Area"};
+            String[] choices = { "Area", "Perimeter"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
                 "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
                                                                                      // default
@@ -275,13 +292,18 @@ public class AreaOfARectangle
                     getType();
                     break;
                     
+                case "Perimeter":
+                    getLength();
+                    getWidth();
+                    displayPerimeterR();
+                    getType();
             }
         }
         
             
             public static void getFormulaP()
         {
-            String[] choices = { "Area"};
+            String[] choices = { "Area", "Perimeter"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
                 "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
                                                                                      // default
@@ -296,18 +318,23 @@ public class AreaOfARectangle
             {
                 case "Area":
                     getLength();
-                    getWidth();
-                    displayArea();
+                    getHeight();
+                    displayAreaP();
                     getType();
                     break;
                     
+                case "Perimeter":
+                    getLength();
+                    getWidth();
+                    displayPerimeterR();
+                    getType();
             }
         }
             
             
             public static void getFormulaT()
         {
-            String[] choices = { "Area"};
+            String[] choices = { "Area", "Perimeter"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
                 "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
                                                                                      // default
@@ -321,18 +348,47 @@ public class AreaOfARectangle
             switch(formula)
             {
                 case "Area":
-                    getLength();
-                    getWidth();
-                    displayArea();
+                    displayAreaT();
                     getType();
                     break;
+                    
+                case "Perimeter":
+                    displayPerimeterT();
+                    getType();
+                    
+            }
+        }
+            
+            public static void getFormulaTR()
+        {
+            String[] choices = { "Area", "Perimeter"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Area":
+                    displayAreaTR();
+                    getType();
+                    break;
+                    
+                case "Perimeter":
+                    displayPerimeterTR();
+                    getType();
                     
             }
         }
             
             public static void getFormulaRS()
         {
-            String[] choices = { "Volume"};
+            String[] choices = { "Volume", "Surface Area"};
             String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
                 "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
                                                                                      // default
@@ -353,9 +409,286 @@ public class AreaOfARectangle
                 JOptionPane.showMessageDialog(null,
                 "Hello " + name + " The Volume of your Rectangular Solid is "+ volume);
                     getType();
+                    
+                case "Surface Area":
+                    double surfaceArea;
+                input = JOptionPane.showInputDialog("Enter Length");
+                length = Integer.parseInt(input);
+                input = JOptionPane.showInputDialog("Enter Width");
+                width = Integer.parseInt(input);
+                input = JOptionPane.showInputDialog("Enter Height");
+                height = Integer.parseInt(input);
+                
+                
+                surfaceArea = 2 * length * height + 2 * width * height + 2 * width * length; 
+                
+                JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Surface Area of your shape is "+ surfaceArea);
+                    getType();
+            }
+        }
+            
+            public static void getFormulaCU()
+        {
+            String[] choices = { "Volume", "Surface Area"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Volume":
+                    double side;
+                    input = JOptionPane.showInputDialog("Enter Side");
+                    side = Integer.parseInt(input);
+                    
+                    volume = side * side * side;
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Volume of your cube is "+ volume);
+                    getType();
+                    break;
+                         
+                case "Surface Area":
+                    double surfaceArea;
+                    
+                    input = JOptionPane.showInputDialog("Enter Side");
+                    side = Integer.parseInt(input);
+                    
+                    surfaceArea = 6 * side * 6 * side;
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Surface Area of your cube is "+ surfaceArea);
+                    getType();
+         }
+        }
+            public static void getFormulaRC()
+        {
+            String[] choices = { "Volume", "Surface Area"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Volume":
+                    double volume, radius, height;
+                    
+                    input = JOptionPane.showInputDialog("Enter Radius");
+                    radius = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Height");
+                    height = Integer.parseInt(input);
+                    
+                    volume = 3.14 * radius *radius * height;
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Volume of your Right Circular Cylinder is "+ volume);
+                    getType();
+                    
+                    break;
+                    
+                case "Surface Area":
+                    double surfaceArea;
+                    
+                    input = JOptionPane.showInputDialog("Enter Radius");
+                    radius = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Height");
+                    height = Integer.parseInt(input);
+                    
+                    surfaceArea = 2 * 3.14 * radius * height + 2 * 3.14 * radius * radius;
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Surface Area of your Right Circular Cylinder is "+ surfaceArea);
+                    getType();
+                    
+                    
+            }
+            
+            }
+            public static void getFormulaSP()
+        {
+            String[] choices = { "Volume", "Surface Area"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Volume":
+                    double radius;
+                    
+                    input = JOptionPane.showInputDialog("Enter Radius");
+                    radius = Integer.parseInt(input);
+                    
+                    volume = 1.33 * 3.14 * radius *radius * radius;
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Volume of your Sphere is "+ volume);
+                    getType();
+                    
+                    break;
+                    
+                case "Surface Area":
+                    input = JOptionPane.showInputDialog("Enter Radius");
+                    radius = Integer.parseInt(input);
+                    
+                    surfaceArea = 4 * 3.14 * radius *radius;
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Surface Area of your Sphere is "+ surfaceArea);
+                    getType();
+                    
             }
         }
         
+        public static void getFormulaRCC()
+        {
+            String[] choices = { "Volume", "Surface Area"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Volume":
+                  double radius, height;
+                  
+                  input = JOptionPane.showInputDialog("Enter Radius");
+                    radius = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Height");
+                    height = Integer.parseInt(input);
+                  
+                  volume = 0.33 * 3.14 * radius * radius * height;
+                  
+                  JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Volume of your Right Circular Cone is "+ volume);
+                    getType();
+                    break;
+                    
+                case "Surface Area":
+                    
+                    input = JOptionPane.showInputDialog("Enter Radius");
+                    radius = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Height");
+                    height = Integer.parseInt(input);
+                    
+                    surfaceArea = 3.14 * radius * (Math.sqrt(radius * radius + height * height));
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Surface Area of your Right Circular Cone is "+ surfaceArea);
+                    getType();
+            }
+        }
+        
+        public static void getFormulaPY()
+        {
+            String[] choices = { "Volume"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Volume":
+                    double length, width, height;
+                    
+                    input = JOptionPane.showInputDialog("Enter Length");
+                    length = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Width");
+                    width = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Height");
+                    height = Integer.parseInt(input);
+                    
+                    volume = 0.33 * length * width * height;
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Volume of your Pyramid is "+ volume);
+                    getType();
+                    break;
+                    
+            }
+        }
+        
+        public static void getFormulaRCCF()
+        {
+            String[] choices = { "Volume", "Surface Area"};
+            String input = (String) JOptionPane.showInputDialog(null, "Choose your formula",
+                "Choose your formula", JOptionPane.QUESTION_MESSAGE, null, // Use
+                                                                                     // default
+                                                                                     // icon
+                choices, // Array of choices
+                choices[0]); // Initial choice
+            System.out.println(input);
+            formula = input;
+        
+            
+            switch(formula)
+            {
+                case "Volume":
+                    double radiusT, radiusB, height, side;
+                    
+                    input = JOptionPane.showInputDialog("Enter Top Radius");
+                    radiusT = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Bottom Radius");
+                    radiusB = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Side");
+                    side = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Height");
+                    height = Integer.parseInt(input);
+                    
+                    volume = 3.14 * (radiusT * radiusB + + radiusB * radiusB) * height / 3;
+                            
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Volume of your Right Circular Cone Frustum is "+ volume);
+                    getType();
+                    break;
+                    
+                case "Surface Area":
+                    double surfaceArea;
+                    input = JOptionPane.showInputDialog("Enter Top Radius");
+                    radiusT = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Bottom Radius");
+                    radiusB = Integer.parseInt(input);
+                    input = JOptionPane.showInputDialog("Enter Side");
+                    side = Integer.parseInt(input);
+                    
+                    surfaceArea = 3.14 * side * (radiusB + radiusT);
+                    
+                    JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Surface Area of your Right Circular Cone Frustum is "+ surfaceArea);
+                    getType();
+            }
+        }
         
         /*public static void getFormula()
         {
@@ -450,7 +783,7 @@ public class AreaOfARectangle
             displayRadius();
         }
         
-        public static void getVolume()
+        /*public static void getVolume()
         {
             if(formula == "Rectangular Solid")
             {
@@ -496,7 +829,20 @@ public class AreaOfARectangle
         {
             if(formula == "Rectangular Solid")
             {
-                volume = length * width * height; 
+                double surfaceArea;
+                input = JOptionPane.showInputDialog("Enter Length");
+                length = Integer.parseInt(input);
+                input = JOptionPane.showInputDialog("Enter Width");
+                width = Integer.parseInt(input);
+                input = JOptionPane.showInputDialog("Enter Height");
+                height = Integer.parseInt(input);
+                
+                
+                surfaceArea = 2 * length * height + 2 * width * height + 2 * width * length; 
+                
+                JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Surface Area of your shape is "+ area);
+                
             }//end if
             
             if(formula == "Cube")
@@ -528,7 +874,7 @@ public class AreaOfARectangle
             {
                 
             }//end if
-        }
+        }*/
             
            // JOptionPane.showMessageDialog(null,
              //   "Hello " + name + " The Volume of your Rectangular Solid is "+ volume);
@@ -538,6 +884,41 @@ public class AreaOfARectangle
         {
          area = length * width;
          JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Area of your shape is "+ area);
+        }
+        
+        public static void displayAreaP()
+        {
+         area = length * height;
+         JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Area of your shape is "+ area);
+        }
+        
+        public static void displayAreaT()
+        {
+         double base1, base2;
+           getHeight();
+         input = JOptionPane.showInputDialog("Enter Base 1");
+            base1 = Integer.parseInt(input);
+         input = JOptionPane.showInputDialog("Enter Base 2");
+            base2 = Integer.parseInt(input);
+         
+            area = 0.5 * height * (base1 + base2);
+            
+         JOptionPane.showMessageDialog(null,
+                 "Hello " + name + " The Area of your shape is "+ area);
+        }
+        
+        public static void displayAreaTR()
+        {
+            double base;
+            input = JOptionPane.showInputDialog("Enter Height");
+            height = Integer.parseInt(input);
+            input = JOptionPane.showInputDialog("Enter Base");
+            base = Integer.parseInt(input);
+            area = 0.5 * base * height;
+            
+            JOptionPane.showMessageDialog(null,
                  "Hello " + name + " The Area of your shape is "+ area);
         }
         
@@ -552,6 +933,67 @@ public class AreaOfARectangle
         {
             JOptionPane.showMessageDialog(null,
                     "Hello " + name + " The Circumference of your shape is " + circumference);
+        }
+        
+        public static void displayPerimeterS()
+        {
+            double perimeter;
+            perimeter = length * 4;
+            
+            JOptionPane.showMessageDialog(null,
+                    "Hello " + name + " The Perimeter of your shape is " + perimeter);
+        }
+        
+        public static void displayPerimeterR()
+        {
+            double perimeter;
+            perimeter = length * 2 + width * 2;
+            
+            JOptionPane.showMessageDialog(null,
+                    "Hello " + name + " The Perimeter of your shape is " + perimeter);
+        }
+        
+        public static void displayPerimeterT()
+        {
+            double perimeter, side1, side2, base1, base2;
+            
+            input = JOptionPane.showInputDialog("Enter Side 1");
+            side1 = Integer.parseInt(input);
+         input = JOptionPane.showInputDialog("Enter Side 2");
+            side2 = Integer.parseInt(input);
+            input = JOptionPane.showInputDialog("Enter Base 1");
+            base1 = Integer.parseInt(input);
+         input = JOptionPane.showInputDialog("Enter Base 2");
+            base2 = Integer.parseInt(input);
+            
+            perimeter = side1 + side2 + base1 + base2;
+            
+            JOptionPane.showMessageDialog(null,
+                    "Hello " + name + " The Perimeter of your shape is " + perimeter);
+        }
+        
+        public static void displayPerimeterTR()
+        {
+            double perimeter, side1, side2, base;
+            input = JOptionPane.showInputDialog("Enter Side 1");
+            side1 = Integer.parseInt(input);
+            input = JOptionPane.showInputDialog("Enter Side 2");
+            side2 = Integer.parseInt(input);
+            input = JOptionPane.showInputDialog("Enter Base");
+            base = Integer.parseInt(input);
+            perimeter = side1 + side2 + base;
+            
+            JOptionPane.showMessageDialog(null,
+                    "Hello " + name + " The Perimeter of your shape is " + perimeter);
+            
+        }
+        
+        
+        public static void displayAreaS()
+        {
+            area = length * length;
+            JOptionPane.showMessageDialog(null,
+                    "Hello " + name + " The Area of your Square is " + area);
         }
         /*
         {
